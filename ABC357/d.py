@@ -1,7 +1,11 @@
-n_str = input()
-n_num = int(n_str)
-divider = 998244353
+str_n = input()
+int_n = int(str_n)
 
-a = 10 ** len(n_str)
-sigma = ((a * n_num) - 1) / (a - 1)
-print(int((n_num * sigma) % divider))
+p = 998244353
+
+numerator = pow(10, int_n * len(str_n), p) - 1
+denominator = pow(10, len(str_n), p) - 1
+
+ans = (int_n * numerator * pow(denominator, -1, p)) % p
+
+print(ans)
