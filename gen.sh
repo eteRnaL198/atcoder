@@ -1,13 +1,29 @@
 #!/bin/bash
 
-# Check if an argument is provided
-if [ -z "$1" ]; then
-  echo "Please provide a number as an argument."
-  exit 1
+# Check if a number is given as a command-line argument
+if [[ -n $1 ]]; then
+  # Use the provided argument as the next number
+  next_number=$1
+else
+  # Find the directory with the highest number in the format ABC{number}
+  max_number=0
+
+  for dir in ABC*/; do
+    # Extract the number after "ABC" in the directory name
+    number=${dir#ABC}
+    number=${number%/}
+    
+    # Update max_number if current number is greater
+    if [[ $number -gt $max_number ]]; then
+      max_number=$number
+    fi
+  done
+
+  # Increment max_number by 1
+  next_number=$((max_number + 1))
 fi
 
-# Get the number from the argument
-num=$1
+num=$next_number
 
 # Define the directory name
 dirname="ABC${num}"
