@@ -1,5 +1,4 @@
 # https://atcoder.jp/contests/abc379/tasks/abc379_a
 
-n, m = list(map(int, input().split()))
-a = int(input())
-
+n = input()
+print(n[1] + n[2] + n[0], n[2] + n[0] + n[1])
