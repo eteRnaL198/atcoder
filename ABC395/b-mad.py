@@ -7,3 +7,6 @@ print(grid)
 
 grid[0][0] = "x"
 print(grid)
+
+
+# [] * n はdeep copyにならない

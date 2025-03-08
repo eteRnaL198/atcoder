@@ -5,17 +5,21 @@ package main
 import "fmt"
 
 func main() {
-	val := 1
-	arr := []*int{&val, &val, &val}
+	val, val2, val3 := "?", "?", "?"
+	arr := [][]*string{{&val, &val2, &val3}, {&val, &val2, &val3}, {&val, &val2, &val3}}
 
 	for _, v := range arr {
-		fmt.Printf("%v ", *v)
+		for _, v2 := range v {
+			fmt.Printf("%v ", *v2)
+		}
 	}
 	fmt.Println()
 
-	val = 2
+	val = "x"
 	for _, v := range arr {
-		fmt.Printf("%v ", *v)
+		for _, v2 := range v {
+			fmt.Printf("%v ", *v2)
+		}
 	}
 	fmt.Println()
 }
