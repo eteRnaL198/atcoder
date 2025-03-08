@@ -2,5 +2,6 @@
   "github.copilot.editor.enableCodeActions": false,
   "github.copilot.enable": {
     "python": false
-  }
+  },
+  "github.copilot.editor.enableAutoCompletions": false
 }
